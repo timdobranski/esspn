@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className='tv'>
-    <h1 className='logo'>ESSPN</h1>
-    <p>SCORES</p>
-    <p>HIGHLIGHTS</p>
-    <p>TEAMS</p>
+        <h1 className='logo'>ESSPN</h1>
+        <p>SCORES</p>
+        <p>HIGHLIGHTS</p>
+        <p>TEAMS</p>
       </div>
     </main>
   )
