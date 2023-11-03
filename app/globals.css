@@ -12,7 +12,7 @@
 .app {
   box-sizing: border-box;
   position: relative;
-  background-image: url('../public/images/family-watching-tv.jpeg');
+  background-image: url('../public/images/family-watching-tv2.jpeg');
   background-size: 100% auto;
   background-repeat: no-repeat;
   width: 100vw;
@@ -33,9 +33,28 @@
   left: 33.5vw;
   border: solid 4px rgb(43, 43, 43);
   animation: glow-animation 2s infinite alternate;
+  background-image: url('../public/images/football.jpeg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 45% center;
 
 }
+.tv::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  filter: brightness(50%);
+  pointer-events: none;
+}
 .logo {
+  position: relative;
+  z-index: 1;
   font-family: espn;
   color: rgb(245, 45, 45);
   font-size: 2.5vw;
@@ -43,8 +62,10 @@
   /* animation: text-glow-animation 2s infinite alternate; */
 }
 .tv p {
+  position: relative;
+  z-index: 1;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 1.5vw;
   margin: .5rem;
   padding: 0;
@@ -120,10 +141,10 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: inherit; /* Use the same background as the parent */
+    background-image: inherit;
     background-size: inherit;
     background-position: inherit;
-    filter: brightness(50%); /* Adjust the brightness as needed */
+    filter: brightness(50%);
     pointer-events: none;
   }
   .logo {
