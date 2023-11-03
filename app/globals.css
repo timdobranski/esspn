@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'espn';
-  src: url('../public/fonts/esp_bold.ttf');
+  src: url('../public/fonts/esp_bdit.ttf');
 }
 
 .app {
@@ -22,6 +22,7 @@
 .tv {
   position: relative;
   background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
   width: 30vw;
   height: 16vw;
   display: flex;
@@ -37,12 +38,13 @@
 .logo {
   font-family: espn;
   color: rgb(245, 45, 45);
-  font-size: 2vw;
+  font-size: 2.5vw;
   margin: .5vw 0 1rem 0;
+  /* animation: text-glow-animation 2s infinite alternate; */
 }
 .tv p {
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 1.5vw;
   margin: .5rem;
   padding: 0;
@@ -65,5 +67,81 @@
                 0 0 40px rgba(255, 255, 255, 0.3),
                 0 0 60px rgba(255, 255, 255, 0.3),
                 0 0 80px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes text-glow-animation {
+  from {
+    text-shadow: 0 0 2px rgba(183, 183, 183, 0.5),
+                 0 0 4px rgba(156, 156, 156, 0.5),
+                 0 0 6px rgba(143, 143, 143, 0.5);
+  }
+  to {
+    text-shadow: 0 0 5px rgba(184, 184, 184, 0.7),
+                 0 0 10px rgba(216, 216, 216, 0.7),
+                 0 0 15px rgba(159, 159, 159, 0.7);
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    box-sizing: border-box;
+    position: relative;
+    background-image: none;
+    background-color: rgb(255, 255, 255);
+    background-size: 100vw 100vh;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  .tv {
+    position: relative;
+    top: 2rem;
+    left: 0;
+    background-image: url('../public/images/football.jpeg');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 45% center;
+    margin: 0 auto;
+    width: 90vw;
+    height:80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: solid 4px rgb(43, 43, 43);
+    animation: glow-animation 2s infinite alternate;
+  }
+  .tv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit; /* Use the same background as the parent */
+    background-size: inherit;
+    background-position: inherit;
+    filter: brightness(50%); /* Adjust the brightness as needed */
+    pointer-events: none;
+  }
+  .logo {
+    position: relative;
+    z-index: 1;
+    font-family: espn;
+    color: rgb(245, 45, 45);
+    font-size: 14vw;
+    margin: 1.5rem 0 10rem 0;
+    /* animation: text-glow-animation 2s infinite alternate; */
+  }
+  .tv p {
+    position: relative;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 2rem;;
+    margin: 1rem;
+    padding: 0;
   }
 }
